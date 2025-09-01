@@ -1,0 +1,14 @@
+:root {
+  --ink: #1e293b; /* primary text */
+  --muted: #64748b; /* secondary text */
+  --bg: #f6f7fb; /* page bg */
+  --card: #ffffff; /* card bg */
+  --line: #e8ebf2; /* separators */
+  --brand: #2b6cb0; /* royal blue */
+  --accent: #8b5cf6; /* soft violet */
+  --gold: #c9a227; /* luxery accent */
+}
+
+*{
+    box-sizing: border-box;
+}

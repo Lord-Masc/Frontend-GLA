@@ -151,3 +151,12 @@ blockquote::before {
   gap: 22px;
   margin-top: 14px;
 }
+.member {
+  position: relative;
+  padding: 26px 22px 22px;
+  border-radius: 16px;
+  background: linear-gradient(180deg, #ffffff, #fbfbfe);
+  border: 1px solid var(--line);
+  /* transition: transform 0.35s ease, box-shadow 0.35s ease, */
+    border-color :0.35s ease;
+}

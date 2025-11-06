@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #circle {
+            width: 100px;
+            height: 100px;
+            background-color: red;
+            border-radius: 50%;
+            background: lightgray;
+            display: flex;
+            position: absolute;
+            top: 0;
+            overflow: hidden;
+            left: 0;
+            animation: moveBox 6s linear forwards;
+        }
+
+        @keyframes moveBox {
+            0% {
+                top: 0;
+                left: 0;
+                background-color: red;
+            }
+
+            /* top-left */
+            25% {
+                top: 0;
+                left: calc(100% - 100px);
+                background-color: blue;
+            }
+
+            /* top-right */
+            50% {
+                top: calc(100% - 100px);
+                left: calc(100% - 100px);
+
+            }
+
+            /* bottom-right */
+            75% {
+                top: calc(100% - 100px);
+                left: 0;
+            }
+
+            /* bottom-left */
+            100% {
+                top: 0;
+                left: 0;
+            }
+
+            /* back to top-left */
+        }
+    </style>
+</head>
+
+<body>
+    <div id="circle">
+        <hr>
+    </div>
+</body>
+
+</html>

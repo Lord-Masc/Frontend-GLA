@@ -1,0 +1,75 @@
+<html lang="en">
+<head>
+    <style>
+    body {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      background: #111;
+      margin: 0;
+    }
+
+    .a, .b, .c, .d, .e, .f, .g, .h, .i, .j, .k {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      border: solid 4px black;
+      animation: spin 10s linear infinite, colorShift 6s ease-in-out infinite alternate;
+    }
+
+    .a { height: 220px; width: 220px; animation-duration: 10s; }
+    .b { height: 200px; width: 200px; animation-duration: 11s; }
+    .c { height: 180px; width: 180px; animation-duration: 12s; }
+    .d { height: 160px; width: 160px; animation-duration: 13s; }
+    .e { height: 140px; width: 140px; animation-duration: 14s; }
+    .f { height: 120px; width: 120px; animation-duration: 15s; }
+    .g { height: 100px; width: 100px; animation-duration: 16s; }
+    .h { height: 80px;  width: 80px;  animation-duration: 17s; }
+    .i { height: 60px;  width: 60px;  animation-duration: 18s; }
+    .j { height: 40px;  width: 40px;  animation-duration: 19s; }
+    .k { height: 20px;  width: 20px; background: black; animation-duration: 20s; }
+
+    @keyframes spin {
+      0%   { transform: rotate(0deg); }
+      100% { transform: rotate(360deg); }
+    }
+
+    @keyframes colorShift {
+      0%   { background: #ff4d4d; }
+      25%  { background: #4dff88; }
+      50%  { background: #4dd2ff; }
+      75%  { background: #d44dff; }
+      100% { background: #ffff4d; }
+    }
+
+    /* Pause when hovering */
+    div:hover {
+      animation-play-state: paused;
+    }
+  </style>
+</head>
+<body>
+    <div class="a">
+        <div class="b">
+            <div class="c">
+                <div class="d">
+                    <div class="e">
+                        <div class="f">
+                            <div class="g">
+                                <div class="h">
+                                    <div class="i">
+                                        <div class="j">
+                                            <div class="k"></div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

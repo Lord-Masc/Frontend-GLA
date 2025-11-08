@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+
+    </style>
+</head>
+<body>
+    <img id="img" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSAxt_0PJ8T-KXXZa6YvyLG9iwdnCjpy-VfAQ&s" alt="my image" >
+    <button id="btn">Change image</button>
+    
+    <script>
+         const img = document.getElementById("img");
+         document.getElementById("btn").addEventListener("click",function () {
+            img.setAttribute("src","https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRD___toorJRxO09qtGdnu3PBANyYHpGPUMRQ&s")
+         })
+    </script>
+</body>
+</html>

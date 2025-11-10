@@ -5,7 +5,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <style>
-         body {
+      body {
+       display: flex;
+       height: 100vh;
+       justify-content: center;
+       flex-direction: column;
+       align-items: center;
       text-align: center;
       font-family: Arial;
       margin-top: 50px;
@@ -27,11 +32,15 @@
       <h2>🎨 Click the button to change the background color!</h2>
       <button id="colorBtn">Change Color</button>
     <script>
- const colors = ["red", "blue", "green", "purple", "orange", "pink", "yellow"];
+    const colors = ["red", "blue", "green", "purple", "orange", "pink", "yellow"];
     const btn = document.getElementById("colorBtn");
 
     btn.addEventListener("click", function() {
-      const randomColor = colors[Math.floor(Math.random() * colors.length)];
+      const randomNumber = Math.random();
+      const index = Math.floor(randomNumber * colors.length)
+      console.log(index, randomNumber);
+      
+      const randomColor = colors[index];
       document.body.style.backgroundColor = randomColor;
     });
     </script>

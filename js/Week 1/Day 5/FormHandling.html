@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+
+    </style>
+</head>
+
+<body>
+
+    <!-- This is used to prevent the form after reload -->
+    <form id="myform">
+        <input type="text" name="text" id="text" placeholder="Eneter Your Name">
+        <button id="btn">Submit</button>
+    </form>
+
+    <script>
+
+        const form = document.getElementById("myform")
+        form.addEventListener("submit", function (event) {
+
+            event.preventDefault()
+            const name = document.getElementById("text").value
+            console.log(name);
+
+
+        })
+
+    </script>
+</body>
+
+</html>

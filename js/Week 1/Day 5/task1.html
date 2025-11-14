@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            font-family: Arial;
+            text-align: center;
+            margin-top: 50px;
+        }
+
+        input {
+            display: block;
+            margin: 10px auto;
+            padding: 10px;
+            width: 250px;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+        }
+
+        button {
+            padding: 10px 20px;
+            background-color: #007bff;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #0056b3;
+        }
+
+        p {
+            color: red;
+            font-weight: bold;
+        }
+    </style>
+</head>
+
+<body>
+    <h2>🧾 Simple Form Validator</h2>
+
+    <form id="registerForm">
+        <input type="text" id="name" placeholder="Enter your name">
+        <input type="email" id="email" placeholder="Enter your email">
+        <input type="password" id="pass" placeholder="Enter password">
+        <button type="submit">Register</button>
+    </form>
+
+    <p id="message"></p>
+
+    <script>
+        const form = document.getElementById("registerForm")
+        const msg = document.getElementById("message")
+
+        form.addEventListener("submit", function (event) {
+            event.preventDefault()
+            let text = document.querySelector("#name").value.trim()
+            let email = document.getElementById("email").value.trim()
+            let password = document.getElementById("pass").value.trim()
+
+            if (text === "" || email === "" || password === "") {
+                msg.textContent = "⚠️ All fields are required!";
+                msg.style.color = "red";
+            } else if (!email.includes("@") || !email.includes(".")) {
+                msg.textContent = "❌ Invalid email format!";
+                msg.style.color = "red";
+            } else if (password.length < 6) {
+                msg.textContent = "🔒 Password must be at least 6 characters!";
+                msg.style.color = "red";
+            } else {
+                msg.textContent = "✅ Registration successful!";
+                msg.style.color = "green";
+            }
+        })
+
+    </script>
+
+</body>
+
+</html>

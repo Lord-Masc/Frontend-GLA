@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>To Do List</title>
+    <link rel="stylesheet" href="./style.css">
+    <style>
+        body {
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: #f1faee;
+        }
+
+        #container {
+            text-align: center;
+            background-color: white;
+            height: auto;
+            padding-left: 20px;
+            padding-right: 20px;
+            border: 2px solid black;
+            border-radius: 20px;
+        }
+
+        input {
+            height: 40px;
+            font-size: larger;
+            text-align: center;
+            font-weight: 500;
+            border-radius: 10px;
+            border: 2px solid black;
+        }
+
+        #btn {
+            height: 45px;
+            width: 90px;
+            font-weight: 500;
+            border-radius: 10px;
+            border: 2px solid black;
+            cursor: pointer;
+        }
+
+        ul {
+            list-style: none;
+        }
+
+        li {
+            padding: 10px;
+            font-size: larger;
+            font-weight: 400;
+            text-align: left;
+            width: 80%;
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .delete-btn {
+            color: red;
+            font-weight: bold;
+            cursor: pointer;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="container">
+        <h2>To Do List</h2>
+        <input type="text" name="text" id="task">
+        <button id="btn">Add</button>
+        <ul id="list">
+
+        </ul>
+
+    </div>
+
+    <script>
+
+        let input = document.getElementById("task")
+        let button = document.getElementById("btn")
+        let list = document.getElementById("list")
+
+        button.addEventListener("click", () => {
+            const task = input.value.trim();
+
+            if (task === "") {
+                alert("Please enter a task!");
+                return;
+            }
+
+            const li = document.createElement("li")
+            li.textContent = task
+
+            const del = document.createElement("span")
+            del.textContent = "❌"
+            del.classList.add("delete-btn");
+            del.addEventListener("click", function (event) {
+                event.stopPropagation() // stops li click event
+                li.remove()
+            })
+            li.appendChild(del)
+            list.appendChild(li)
+            input.value = ""
+
+        })
+    </script>
+</body>
+
+</html>

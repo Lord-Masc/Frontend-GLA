@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+body {
+  background: #0d0d0d;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  font-family: Arial;
+}
+
+.card {
+  width: 300px;
+  padding: 30px;
+  background: #111;
+  border-radius: 20px;
+  text-align: center;
+  position: relative;
+
+  transition: transform 0.15s ease-out, box-shadow 0.2s ease-in;
+  cursor: pointer;
+
+  box-shadow: 0 0 30px rgba(255, 0, 0, 0.2);
+}
+
+    </style>
+</head>
+
+<body>
+    <div class="card" id="magnetCard">
+        <h2>Hover Me</h2>
+        <p>I follow your cursor like a magnet!</p>
+    </div>
+
+    <script src="script.js"></script>
+
+
+    <script>
+const card = document.getElementById("magnetCard");
+
+card.addEventListener("mousemove", (e) => {
+  const rect = card.getBoundingClientRect();
+  const x = e.clientX - rect.left - rect.width / 2;
+  const y = e.clientY - rect.top - rect.height / 2;
+
+  card.style.transform = `translate(${x / 8}px, ${y / 8}px)`;
+
+  card.style.boxShadow = `${x / 5}px ${y / 5}px 30px rgba(0, 255, 255, 0.4)`;
+});
+
+card.addEventListener("mouseleave", () => {
+  card.style.transform = `translate(0px, 0px)`;
+  card.style.boxShadow = `0 0 30px rgba(255, 0, 0, 0.2)`;
+});
+
+    </script>
+</body>
+
+</html>
